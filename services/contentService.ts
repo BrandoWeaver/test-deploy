@@ -144,9 +144,9 @@ export const CONTENT_SERVICE = {
   }) => {
     return useApi<POST.PostDetail>(
       () =>
-        API.POST.GET_CONTENT_BY_SLUG.replace(':type', config.public.type)
-          .replace(':version', config.public.version)
-          .replace(':lang', locale.value),
+        API.POST.GET_CONTENT_BY_SLUG.replace(':type', 'web')
+          .replace(':version', 'v1')
+          .replace(':lang', 'en'),
       {
         query: {
           slug: slug || '',
@@ -295,9 +295,9 @@ export const CONTENT_SERVICE = {
   }) => {
     return useApi<IImageSeries.ImageData>(
       () =>
-        API.POST.GET_SERIES_CONTENT.replace(':type', config.public.type)
-          .replace(':version', config.public.version)
-          .replace(':lang', locale.value),
+        API.POST.GET_SERIES_CONTENT.replace(':type', 'web')
+          .replace(':version', 'v1')
+          .replace(':lang', 'en'),
       {
         query: {
           page: page,
@@ -331,9 +331,9 @@ export const CONTENT_SERVICE = {
   }) => {
     return useApi<IRELATEIMAGE.RelateImage>(
       () =>
-        API.POST.GET_RELATED_IMAGE.replace(':type', config.public.type)
-          .replace(':version', config.public.version)
-          .replace(':lang', locale.value),
+        API.POST.GET_RELATED_IMAGE.replace(':type', 'web')
+          .replace(':version', 'v1')
+          .replace(':lang', 'en'),
       {
         query: {
           page: page,

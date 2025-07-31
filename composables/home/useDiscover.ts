@@ -35,6 +35,7 @@ export function useDiscover() {
         )
       )
     },
+    server: pageDiscover.value === 1,
     onError(error) {
       console.error('Failed to load discover:', error)
     },

@@ -1,0 +1,117 @@
+<template>
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <slot />
+      <p
+        :class="[thin ? 'font-normal text-grey-100' : 'font-bold']"
+        class="text-[14px] py-2"
+      >
+        {{ title }}
+      </p>
+      <svg
+        v-show="warning"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="17"
+        viewBox="0 0 16 17"
+        fill="none"
+      >
+        <g clip-path="url(#clip0_92_7035)">
+          <path
+            d="M8 0.223633C6.41775 0.223633 4.87104 0.692825 3.55544 1.57188C2.23985 2.45093 1.21447 3.70036 0.608967 5.16217C0.00346629 6.62397 -0.15496 8.23251 0.153721 9.78436C0.462403 11.3362 1.22433 12.7617 2.34315 13.8805C3.46197 14.9993 4.88743 15.7612 6.43928 16.0699C7.99113 16.3786 9.59966 16.2202 11.0615 15.6147C12.5233 15.0092 13.7727 13.9838 14.6518 12.6682C15.5308 11.3526 16 9.80588 16 8.22363C15.9977 6.10261 15.1541 4.06911 13.6543 2.56931C12.1545 1.06952 10.121 0.225927 8 0.223633V0.223633ZM8 14.8903C6.68146 14.8903 5.39253 14.4993 4.2962 13.7668C3.19987 13.0342 2.34539 11.993 1.84081 10.7749C1.33622 9.55668 1.2042 8.21624 1.46144 6.92303C1.71867 5.62982 2.35361 4.44194 3.28596 3.50959C4.21831 2.57724 5.4062 1.9423 6.6994 1.68506C7.99261 1.42783 9.33305 1.55985 10.5512 2.06444C11.7694 2.56902 12.8106 3.4235 13.5431 4.51983C14.2757 5.61616 14.6667 6.90509 14.6667 8.22363C14.6647 9.99115 13.9617 11.6857 12.7119 12.9355C11.4621 14.1854 9.76752 14.8884 8 14.8903Z"
+            fill="black"
+            fill-opacity="0.25"
+          />
+          <path
+            d="M7.9999 6.89062H7.33323C7.15642 6.89062 6.98685 6.96086 6.86183 7.08589C6.7368 7.21091 6.66656 7.38048 6.66656 7.55729C6.66656 7.7341 6.7368 7.90367 6.86183 8.0287C6.98685 8.15372 7.15642 8.22396 7.33323 8.22396H7.9999V12.224C7.9999 12.4008 8.07013 12.5703 8.19516 12.6954C8.32018 12.8204 8.48975 12.8906 8.66656 12.8906C8.84337 12.8906 9.01294 12.8204 9.13796 12.6954C9.26299 12.5703 9.33323 12.4008 9.33323 12.224V8.22396C9.33323 7.87034 9.19275 7.5312 8.9427 7.28115C8.69265 7.0311 8.35352 6.89062 7.9999 6.89062Z"
+            fill="black"
+            fill-opacity="0.25"
+          />
+          <path
+            d="M8 5.55664C8.55228 5.55664 9 5.10893 9 4.55664C9 4.00436 8.55228 3.55664 8 3.55664C7.44772 3.55664 7 4.00436 7 4.55664C7 5.10893 7.44772 5.55664 8 5.55664Z"
+            fill="black"
+            fill-opacity="0.25"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_92_7035">
+            <rect
+              width="16"
+              height="16"
+              fill="white"
+              transform="translate(0 0.223633)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    <!-- accordion -->
+    <!-- Accordion button -->
+    <button
+      @click="accordion"
+      :aria-expanded="isOpen"
+      class="flex gap-1 items-center font-[300] text-[11px] text-grey-300 transition-transform duration-300"
+      :class="{ 'rotate-180': isOpen }"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="12"
+        height="13"
+        viewBox="0 0 12 13"
+        fill="none"
+      >
+        <path
+          d="M9.35491 4.32856C9.30843 4.2817 9.25313 4.2445 9.1922 4.21912C9.13127 4.19373 9.06591 4.18066 8.99991 4.18066C8.9339 4.18066 8.86855 4.19373 8.80762 4.21912C8.74669 4.2445 8.69139 4.2817 8.64491 4.32856L6.35491 6.61856C6.30843 6.66542 6.25313 6.70262 6.1922 6.728C6.13127 6.75339 6.06591 6.76646 5.99991 6.76646C5.9339 6.76646 5.86855 6.75339 5.80762 6.728C5.74669 6.70262 5.69139 6.66542 5.64491 6.61856L3.35491 4.32856C3.30843 4.2817 3.25313 4.2445 3.1922 4.21912C3.13127 4.19373 3.06591 4.18066 2.99991 4.18066C2.9339 4.18066 2.86855 4.19373 2.80762 4.21912C2.74669 4.2445 2.69139 4.2817 2.64491 4.32856C2.55178 4.42224 2.49951 4.54897 2.49951 4.68106C2.49951 4.81315 2.55178 4.93988 2.64491 5.03356L4.93991 7.32856C5.22116 7.60946 5.60241 7.76724 5.99991 7.76724C6.39741 7.76724 6.77866 7.60946 7.05991 7.32856L9.35491 5.03356C9.44803 4.93988 9.50031 4.81315 9.50031 4.68106C9.50031 4.54897 9.44803 4.42224 9.35491 4.32856Z"
+          fill="black"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <transition
+    enter-active-class="transition-all duration-300 ease-in-out"
+    enter-from-class="opacity-0 max-h-0"
+    enter-to-class="opacity-100 max-h-[1000px]"
+    leave-active-class="transition-all duration-300 ease-in-out"
+    leave-from-class="opacity-100 max-h-[1000px]"
+    leave-to-class="opacity-0 max-h-0"
+  >
+    <div v-show="isOpen" class="w-full flex flex-wrap gap-3 overflow-hidden">
+      <div v-for="(item, index) in asset" :key="index" class="flex">
+        <button
+          @click="handleClickButotn(item.id)"
+          :class="
+            item.id === selected
+              ? 'bg-green-light border-primary-light'
+              : 'tranparent'
+          "
+          class="text-center lg:text-[14px] md:text-[13px] px-[16px] py-2 rounded-[6px] text-grey-100 flex items-center gap-1 border border-grey-200 hover:bg-green-light hover:border-primary-light"
+        >
+          {{ item.lable }}
+        </button>
+      </div>
+    </div>
+  </transition>
+</template>
+
+<script setup lang="ts">
+defineProps<{
+  asset: any
+  title: string
+  warning?: boolean
+  thin?: Boolean
+}>()
+const isOpen = ref(true)
+
+const selected = ref(-1)
+
+const handleClickButotn = (id: number) => {
+  selected.value = id
+}
+
+const accordion = () => {
+  isOpen.value = !isOpen.value
+}
+</script>
+
+<style scoped></style>

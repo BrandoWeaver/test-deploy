@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import RegisterForm from '../auth/RegisterForm.vue'
 interface FormData {
   name: string
   email: string

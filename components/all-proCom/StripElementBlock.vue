@@ -74,7 +74,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import ToggleSwitch from '../cusComponents/ToggleSwitch.vue'
-import ExpressCheckout from '../ExpressCheckout.vue'
 const props = defineProps<{ payment_id: number; autoRenew: boolean }>()
 const emit = defineEmits(['updateAutoRenew', 'updatePaymentId'])
 const autoRenewDefault = ref(props.autoRenew)
