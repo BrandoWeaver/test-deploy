@@ -1,0 +1,54 @@
+.hover-for-menuicon {
+  border-radius: 50px;
+  background: #f2f2f2;
+  transition:
+    background 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.hover-for-menuicon:hover {
+  background: linear-gradient(
+    0deg,
+    var(--Dark-EFF1D9, #eff1d9) 0%,
+    var(--Dark-EFF1D9, #eff1d9) 100%
+  );
+  border-radius: 50px;
+}
+
+html.dark body {
+  background-color: #111;
+  transition: background-color 0.3s;
+}
+
+html.light body {
+  background-color: white;
+  transition: background-color 0.3s;
+}
+.vti__dropdown.open {
+  border-radius: 6px;
+}
+.vti__dropdown {
+  border-radius: 6px;
+}
+.vti__input.vti__phone {
+  border-radius: 6px;
+}
+.vue-tel-input {
+  border: none !important;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #e1e0e0;
+  border-radius: 5px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}

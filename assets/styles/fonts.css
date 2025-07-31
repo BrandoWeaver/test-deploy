@@ -1,0 +1,50 @@
+/* Noto Sans */
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bayon - Regular */
+@font-face {
+  font-family: 'Bayon';
+  src: url('/fonts/Bayon-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

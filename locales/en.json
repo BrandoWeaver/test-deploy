@@ -1,0 +1,22 @@
+{
+  "about": {
+    "title": "Why Join Us?"
+  },
+  "home": {
+    "all": "ALL"
+  },
+  "header": {
+    "navigation": {
+      "graphics": "Graphics",
+      "photos": "Photos",
+      "fonts": "Fonts",
+      "videos": "Videos",
+      "audio": "Audio",
+      "sound_effects": "Sound Effects",
+      "three_d_elements": "3D Elements"
+    }
+  },
+  "explor": {
+   "explore_our_graphic_collections": "Explore Our Graphic Collections"
+  }
+}

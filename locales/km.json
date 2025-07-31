@@ -1,0 +1,23 @@
+{
+  "about": {
+    "title": "ហេតុអ្វីបានជា ចូលរួមជាមួយយើង?"
+  },
+  "home": {
+    "all": "ទាំងអស់"
+  },
+  "header": {
+    "navigation": {
+      "graphics": "ក្រាហ្វិក",
+      "photos": "រូបថត",
+      "fonts": "ពុម្ពអក្សរ",
+      "videos": "វីដេអូ",
+      "audio": "សម្លេង",
+      "sound_effects": "Sound Effects",
+      "three_d_elements": "3D Elements"
+    }
+  },
+  "explor": {
+   "explore_our_graphic_collections": "ស្វែងយល់ពីបណ្តុំក្រាហ្វិករបស់យើង"
+  }
+  
+}
