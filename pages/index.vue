@@ -1,6 +1,5 @@
 <template>
-  hello
-  <!-- <HeaderBlockSearchHead
+  <HeaderBlockSearchHead
     backgroundImage="/img/hero_image.png"
     :popularSearch="popularSearch"
     @search="handleSearch"
@@ -84,5 +83,53 @@
     <LazyHomeComFAQShort />
     <LazyBodyBlockCtaSUB v-if="!authStore.authenticated" />
     <LazyBodyBlockSubRe v-if="!authStore.authenticated" />
-  </div> -->
+  </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  colorMode: 'light',
+})
+import {
+  BodyBlockSeasonalCollections,
+  HeaderBlockSearchHead,
+} from '#components'
+import { useBrowseCollection } from '~/composables/home/useBrowseCollection'
+import { useCreator } from '~/composables/home/useCreator'
+import { useDiscover } from '~/composables/home/useDiscover'
+import { useSeasonal } from '~/composables/home/useSeasonal'
+const authStore = useAuthStore()
+const {
+  seasonalList,
+  status: statusSeasonal,
+  loadMoreSeasonal,
+  isFetchingSeasonal,
+  pageSeasonal,
+} = useSeasonal()
+const {
+  allItemsDiscover,
+  isFetchingDiscover,
+  loadMoreDiscover,
+  pageDiscover,
+  status: statusDiscover,
+} = useDiscover()
+const { browseCollectionData, statusBrowseCollection } = useBrowseCollection()
+const {
+  allItemsCreator,
+  isFetchingCreator,
+  loadMoreCreator,
+  statusCreator,
+  pageCreator,
+} = useCreator()
+const handleSearch = (title: string) => {
+  alert('search:' + title)
+}
+const collectionOptions = [
+  { value: 'all', label: 'All Collections' },
+  { value: 'photos', label: 'Photos' },
+  { value: 'videos', label: 'Videos' },
+  { value: 'audio', label: 'Audio' },
+]
+
+const popularSearch = ref([{ link: '/', name: 'Popular Search' }])
+</script>

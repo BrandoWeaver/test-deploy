@@ -17,7 +17,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+  ],
 
   i18n: {
     lazy: false,

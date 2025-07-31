@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  thortok_fe_container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thortok_fe_container
+    ports:
+      - "3000:3000"
+      
